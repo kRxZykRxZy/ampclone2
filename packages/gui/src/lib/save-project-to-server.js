@@ -39,12 +39,12 @@ export default function (projectId, vmState, params) {
     if (creatingProject) {
         Object.assign(opts, {
             method: "post",
-            url: `${storage.projectHost}/${qs}`,
+            url: `${storage.projectHost}/create/projects${qs}`,
         });
     } else {
         Object.assign(opts, {
-            method: "put",
-            url: `${storage.projectHost}/${projectId}${qs}`,
+            method: "post",
+            url: `${storage.projectHost}/projects/update?pID=${projectId}${qs.replace("?", "")}`,
         });
     }
     return new Promise((resolve, reject) => {
@@ -60,7 +60,7 @@ export default function (projectId, vmState, params) {
             }
             body.id = projectId;
             if (creatingProject) {
-                body.id = body["content-name"];
+                body.id = body.project.id
             }
             resolve(body);
         });
