@@ -33,7 +33,6 @@ import storage from "../lib/storage";
 import vmListenerHOC from "../lib/vm-listener-hoc.jsx";
 import vmManagerHOC from "../lib/vm-manager-hoc.jsx";
 import cloudManagerHOC from "../lib/cloud-manager-hoc.jsx";
-import QueryParserHOC from '../lib/query-parser-hoc.jsx';
 import GUIComponent from "../components/gui/gui.jsx";
 import { setIsScratchDesktop } from "../lib/isScratchDesktop.js";
 import TWFullScreenResizerHOC from "../lib/tw-fullscreen-resizer-hoc.jsx";
@@ -237,7 +236,6 @@ const WrappedGui = compose(
     TWThemeManagerHOC, // componentDidUpdate() needs to run very early for icons to update immediately
     TWFullScreenResizerHOC,
     FontLoaderHOC,
-    QueryParserHOC,
     ProjectFetcherHOC,
     TitledHOC,
     ProjectSaverHOC,
