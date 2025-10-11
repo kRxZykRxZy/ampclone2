@@ -14,10 +14,10 @@ const RenderGUI = props => {
             canUseCloud
             canShare={false} // Just Share From The Project Page
             hasCloudPermission
-            canSave={true}
+            canSave
             basePath={process.env.ROOT}
             canEditTitle
-            enableCommunity={true}
+            enableCommunity
             {...props}
         />
     );
