@@ -14,6 +14,9 @@ importers:
       '@fontsource-variable/inter':
         specifier: ^5.2.7
         version: 5.2.8
+      scratch-blocks:
+        specifier: ^1.1.225
+        version: 1.1.225
     devDependencies:
       esbuild-loader:
         specifier: ^4.4.0
@@ -35,13 +38,13 @@ importers:
         version: 4.2.3(webpack@4.47.0)
       webpack:
         specifier: ^4.47.0
-        version: 4.47.0(webpack-cli@3.3.12(webpack@4.47.0))
+        version: 4.47.0(webpack-cli@3.3.12)
       webpack-cli:
         specifier: ^3.3.12
         version: 3.3.12(webpack@4.47.0)
       webpack-dev-server:
         specifier: ^3.11.3
-        version: 3.11.3(webpack-cli@3.3.12(webpack@4.47.0))(webpack@4.47.0)
+        version: 3.11.3(webpack-cli@3.3.12)(webpack@4.47.0)
 
   packages/blocks:
     dependencies:
@@ -96,7 +99,7 @@ importers:
         version: 1.6.6
       uglifyjs-webpack-plugin:
         specifier: 1.3.0
-        version: 1.3.0(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0)))
+        version: 1.3.0(webpack@4.47.0(webpack-cli@3.3.12))
       which:
         specifier: ^4.0.0
         version: 4.0.0
@@ -123,7 +126,7 @@ importers:
         version: 1.8.0
       '@turbowarp/extensions':
         specifier: github:TurboWarp/extensions#master
-        version: https://codeload.github.com/TurboWarp/extensions/tar.gz/5717dfdf451d164f746f8432e0912b4dc83049be(jiti@2.6.1)
+        version: https://codeload.github.com/TurboWarp/extensions/tar.gz/10a2ca468dc0c9a17ebf15be4c2322c0cddafef1(jiti@2.6.1)
       adm-zip:
         specifier: ^0.5.16
         version: 0.5.16
@@ -132,16 +135,16 @@ importers:
         version: 9.8.8
       babel-loader:
         specifier: ^8.4.1
-        version: 8.4.1(@babel/core@7.28.4)(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0)))
+        version: 8.4.1(@babel/core@7.28.4)(webpack@4.47.0(webpack-cli@3.3.12))
       copy-webpack-plugin:
         specifier: ^6.4.1
-        version: 6.4.1(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0)))
+        version: 6.4.1(webpack@4.47.0(webpack-cli@3.3.12))
       cross-env:
         specifier: ^7.0.3
         version: 7.0.3
       css-loader:
         specifier: ^1.0.1
-        version: 1.0.1(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0)))
+        version: 1.0.1(webpack@4.47.0(webpack-cli@3.3.12))
       electron:
         specifier: ^37.2.6
         version: 37.6.1
@@ -150,7 +153,7 @@ importers:
         version: 26.0.20(electron-builder-squirrel-windows@26.0.20)
       file-loader:
         specifier: ^6.2.0
-        version: 6.2.0(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0)))
+        version: 6.2.0(webpack@4.47.0)
       postcss:
         specifier: ^8.4.13
         version: 8.5.6
@@ -159,7 +162,7 @@ importers:
         version: 14.1.0(postcss@8.5.6)
       postcss-loader:
         specifier: ^4.2.0
-        version: 4.3.0(postcss@8.5.6)(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0)))
+        version: 4.3.0(postcss@8.5.6)(webpack@4.47.0(webpack-cli@3.3.12))
       postcss-simple-vars:
         specifier: ^6.0.3
         version: 6.0.3(postcss@8.5.6)
@@ -171,7 +174,7 @@ importers:
         version: 0.23.1
       url-loader:
         specifier: ^4.1.1
-        version: 4.1.1(file-loader@6.2.0(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0))))(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0)))
+        version: 4.1.1(file-loader@6.2.0(webpack@4.47.0(webpack-cli@3.3.12)))(webpack@4.47.0(webpack-cli@3.3.12))
 
   packages/gui:
     dependencies:
@@ -195,7 +198,7 @@ importers:
         version: 3.1001.202405101234
       '@turbowarp/scratch-storage':
         specifier: ^0.0.202403251715
-        version: 0.0.202403251715(encoding@0.1.13)(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0)))
+        version: 0.0.202403251715(encoding@0.1.13)(webpack@4.47.0(webpack-cli@3.3.12))
       '@turbowarp/scratch-svg-renderer':
         specifier: ^1.0.202409161736
         version: 1.0.202505311824(scratch-render-fonts@https://codeload.github.com/TurboWarp/scratch-render-fonts/tar.gz/7b6768fc6dfef6b343a06f992587b74807043961)
@@ -225,10 +228,10 @@ importers:
         version: 4.0.0
       copy-webpack-plugin:
         specifier: 6.4.1
-        version: 6.4.1(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0)))
+        version: 6.4.1(webpack@4.47.0(webpack-cli@3.3.12))
       css-loader:
         specifier: ^1.0.1
-        version: 1.0.1(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0)))
+        version: 1.0.1(webpack@4.47.0(webpack-cli@3.3.12))
       dapjs:
         specifier: 2.3.0
         version: 2.3.0
@@ -348,7 +351,7 @@ importers:
         version: link:../paint
       scratch-render:
         specifier: github:TurboWarp/scratch-render#develop
-        version: https://codeload.github.com/TurboWarp/scratch-render/tar.gz/dd5d399eace4b5bae11906e2237fe67ee6b79d84(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0)))
+        version: https://codeload.github.com/TurboWarp/scratch-render/tar.gz/dd5d399eace4b5bae11906e2237fe67ee6b79d84(webpack@4.47.0(webpack-cli@3.3.12))
       scratch-vm:
         specifier: workspace:latest
         version: link:../vm
@@ -388,13 +391,13 @@ importers:
         version: 10.1.0(eslint@8.55.0)
       babel-loader:
         specifier: 8.3.0
-        version: 8.3.0(@babel/core@7.28.4)(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0)))
+        version: 8.3.0(@babel/core@7.28.4)(webpack@4.47.0(webpack-cli@3.3.12))
       chromedriver:
         specifier: 117.0.3
         version: 117.0.3
       compression-webpack-plugin:
         specifier: ^6.1.2
-        version: 6.1.2(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0)))
+        version: 6.1.2(webpack@4.47.0(webpack-cli@3.3.12))
       enzyme:
         specifier: 3.10.0
         version: 3.10.0
@@ -409,7 +412,7 @@ importers:
         version: 9.0.3(@babel/eslint-parser@7.28.4(@babel/core@7.28.4)(eslint@8.55.0))(eslint@8.55.0)
       eslint-import-resolver-webpack:
         specifier: 0.11.1
-        version: 0.11.1(eslint-plugin-import@2.29.1)(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0)))
+        version: 0.11.1(eslint-plugin-import@2.29.1)(webpack@4.47.0(webpack-cli@3.3.12))
       eslint-plugin-import:
         specifier: 2.29.1
         version: 2.29.1(eslint-import-resolver-webpack@0.11.1)(eslint@8.55.0)
@@ -421,10 +424,10 @@ importers:
         version: 7.33.2(eslint@8.55.0)
       file-loader:
         specifier: 6.2.0
-        version: 6.2.0(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0)))
+        version: 6.2.0(webpack@4.47.0)
       html-webpack-plugin:
         specifier: ^4.2.0
-        version: 4.5.2(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0)))
+        version: 4.5.2(webpack@4.47.0(webpack-cli@3.3.12))
       http-server:
         specifier: ^14.1.1
         version: 14.1.1
@@ -451,10 +454,10 @@ importers:
         version: 3.6.0
       uglifyjs-webpack-plugin:
         specifier: 1.3.0
-        version: 1.3.0(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0)))
+        version: 1.3.0(webpack@4.47.0(webpack-cli@3.3.12))
       url-loader:
         specifier: 4.1.1
-        version: 4.1.1(file-loader@6.2.0(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0))))(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0)))
+        version: 4.1.1(file-loader@6.2.0(webpack@4.47.0(webpack-cli@3.3.12)))(webpack@4.47.0(webpack-cli@3.3.12))
       web-audio-test-api:
         specifier: 0.5.2
         version: 0.5.2
@@ -2326,8 +2329,8 @@ packages:
   '@turbowarp/ancient-hull.js@0.2.13':
     resolution: {integrity: sha512-lpVDr18qRjOLWcPtw9H+nlFhY7hbdgQlLU1b6nJfEn2pMYRnOEtzFXZbprG5JgmUCIzGx/H9WPajbkjRdvUC+Q==}
 
-  '@turbowarp/extensions@https://codeload.github.com/TurboWarp/extensions/tar.gz/5717dfdf451d164f746f8432e0912b4dc83049be':
-    resolution: {tarball: https://codeload.github.com/TurboWarp/extensions/tar.gz/5717dfdf451d164f746f8432e0912b4dc83049be}
+  '@turbowarp/extensions@https://codeload.github.com/TurboWarp/extensions/tar.gz/10a2ca468dc0c9a17ebf15be4c2322c0cddafef1':
+    resolution: {tarball: https://codeload.github.com/TurboWarp/extensions/tar.gz/10a2ca468dc0c9a17ebf15be4c2322c0cddafef1}
     version: 0.0.1
 
   '@turbowarp/json@0.1.2':
@@ -9189,6 +9192,9 @@ packages:
   scratch-blocks@0.1.0-prerelease.20230527085947:
     resolution: {integrity: sha512-wvh7+9X5FeuPM0tfhvqu3TFpNCmx52IcMR1Ysxm0cR/s1dvnwHEAhRZM/6xlx1WQpVT7aD7hU04j7qYaRO0YWw==}
 
+  scratch-blocks@1.1.225:
+    resolution: {integrity: sha512-Ln8cF4hD5EJ64akVTWsb4mVtIxcIpCHS7vXovc6ZQ+2mzkCYV6mViUvdneRZN/dOaLv/9M7L2Er+VUT7tsNxxQ==}
+
   scratch-l10n@3.15.20230527032201:
     resolution: {integrity: sha512-nUqHPQrG9Eal1M+AY/2gJlje7O5W9yZ9yaLsWWScgYPYGFm8rxFnVk8pcEmZCzghz+folsfuN0zS0bPKDopr/Q==}
     hasBin: true
@@ -9199,6 +9205,10 @@ packages:
 
   scratch-l10n@3.16.20231222031921:
     resolution: {integrity: sha512-nKm6cc2cMh1lGRLuj3ItPJNU0YW6RNht0CP/d82hRPEdyOlsfFqMbM+6+1rrzivjd2Cg3HZM/VqXR1BsH96QNA==}
+    hasBin: true
+
+  scratch-l10n@3.18.357:
+    resolution: {integrity: sha512-Rs3YmUa2dzpYqT1O/YT15g99sIwnC7j9TOOmOhUphVKLeiYUvJWiRPKZCugA7/hbIMYZV5VLkmuDgGXhgfSOBw==}
     hasBin: true
 
   scratch-parser@https://codeload.github.com/TurboWarp/scratch-parser/tar.gz/326b4bc5e8177073d57732b8b841bcd36c87f658:
@@ -13317,7 +13327,7 @@ snapshots:
 
   '@turbowarp/ancient-hull.js@0.2.13': {}
 
-  '@turbowarp/extensions@https://codeload.github.com/TurboWarp/extensions/tar.gz/5717dfdf451d164f746f8432e0912b4dc83049be(jiti@2.6.1)':
+  '@turbowarp/extensions@https://codeload.github.com/TurboWarp/extensions/tar.gz/10a2ca468dc0c9a17ebf15be4c2322c0cddafef1(jiti@2.6.1)':
     dependencies:
       '@turbowarp/json': 0.1.2
       '@turbowarp/scratchblocks': 3.6.7
@@ -13363,7 +13373,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@turbowarp/scratch-storage@0.0.202403251715(encoding@0.1.13)(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0)))':
+  '@turbowarp/scratch-storage@0.0.202403251715(encoding@0.1.13)(webpack@4.47.0(webpack-cli@3.3.12))':
     dependencies:
       '@babel/runtime': 7.21.0
       '@turbowarp/nanolog': 0.2.0
@@ -13372,7 +13382,7 @@ snapshots:
       cross-fetch: 3.1.5(encoding@0.1.13)
       fastestsmallesttextencoderdecoder: 1.0.22
       js-md5: 0.7.3
-      worker-loader: 2.0.0(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0)))
+      worker-loader: 2.0.0(webpack@4.47.0(webpack-cli@3.3.12))
     transitivePeerDependencies:
       - encoding
       - webpack
@@ -14355,23 +14365,23 @@ snapshots:
       schema-utils: 2.7.1
       webpack: 4.47.0(webpack-cli@3.3.12)
 
-  babel-loader@8.3.0(@babel/core@7.28.4)(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0))):
+  babel-loader@8.3.0(@babel/core@7.28.4)(webpack@4.47.0(webpack-cli@3.3.12)):
     dependencies:
       '@babel/core': 7.28.4
       find-cache-dir: 3.3.2
       loader-utils: 2.0.4
       make-dir: 3.1.0
       schema-utils: 2.7.1
-      webpack: 4.47.0(webpack-cli@3.3.12(webpack@4.47.0))
+      webpack: 4.47.0(webpack-cli@3.3.12)
 
-  babel-loader@8.4.1(@babel/core@7.28.4)(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0))):
+  babel-loader@8.4.1(@babel/core@7.28.4)(webpack@4.47.0(webpack-cli@3.3.12)):
     dependencies:
       '@babel/core': 7.28.4
       find-cache-dir: 3.3.2
       loader-utils: 2.0.4
       make-dir: 3.1.0
       schema-utils: 2.7.1
-      webpack: 4.47.0(webpack-cli@3.3.12(webpack@4.47.0))
+      webpack: 4.47.0(webpack-cli@3.3.12)
 
   babel-messages@6.23.0:
     dependencies:
@@ -15638,13 +15648,13 @@ snapshots:
     dependencies:
       mime-db: 1.54.0
 
-  compression-webpack-plugin@6.1.2(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0))):
+  compression-webpack-plugin@6.1.2(webpack@4.47.0(webpack-cli@3.3.12)):
     dependencies:
       cacache: 15.3.0
       find-cache-dir: 3.3.2
       schema-utils: 3.3.0
       serialize-javascript: 5.0.1
-      webpack: 4.47.0(webpack-cli@3.3.12(webpack@4.47.0))
+      webpack: 4.47.0(webpack-cli@3.3.12)
       webpack-sources: 1.4.3
     transitivePeerDependencies:
       - bluebird
@@ -15733,7 +15743,7 @@ snapshots:
       p-limit: 1.3.0
       serialize-javascript: 1.9.1
 
-  copy-webpack-plugin@6.4.1(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0))):
+  copy-webpack-plugin@6.4.1(webpack@4.47.0(webpack-cli@3.3.12)):
     dependencies:
       cacache: 15.3.0
       fast-glob: 3.3.3
@@ -15745,7 +15755,7 @@ snapshots:
       p-limit: 3.1.0
       schema-utils: 3.3.0
       serialize-javascript: 5.0.1
-      webpack: 4.47.0(webpack-cli@3.3.12(webpack@4.47.0))
+      webpack: 4.47.0(webpack-cli@3.3.12)
       webpack-sources: 1.4.3
     transitivePeerDependencies:
       - bluebird
@@ -15896,7 +15906,7 @@ snapshots:
     dependencies:
       postcss: 8.5.6
 
-  css-loader@1.0.1(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0))):
+  css-loader@1.0.1(webpack@4.47.0(webpack-cli@3.3.12)):
     dependencies:
       babel-code-frame: 6.26.0
       css-selector-tokenizer: 0.7.3
@@ -15910,7 +15920,7 @@ snapshots:
       postcss-modules-values: 1.3.0
       postcss-value-parser: 3.3.1
       source-list-map: 2.0.1
-      webpack: 4.47.0(webpack-cli@3.3.12(webpack@4.47.0))
+      webpack: 4.47.0(webpack-cli@3.3.12)
 
   css-loader@3.4.0(webpack@4.47.0):
     dependencies:
@@ -16855,7 +16865,7 @@ snapshots:
       esbuild: 0.25.10
       get-tsconfig: 4.11.0
       loader-utils: 2.0.4
-      webpack: 4.47.0(webpack-cli@3.3.12(webpack@4.47.0))
+      webpack: 4.47.0(webpack-cli@3.3.12)
       webpack-sources: 1.4.3
 
   esbuild@0.25.10:
@@ -16959,7 +16969,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-import-resolver-webpack@0.11.1(eslint-plugin-import@2.29.1)(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0))):
+  eslint-import-resolver-webpack@0.11.1(eslint-plugin-import@2.29.1)(webpack@4.47.0(webpack-cli@3.3.12)):
     dependencies:
       array-find: 1.0.0
       debug: 2.6.9(supports-color@6.1.0)
@@ -16972,7 +16982,7 @@ snapshots:
       node-libs-browser: 2.2.1
       resolve: 1.22.10
       semver: 5.7.2
-      webpack: 4.47.0(webpack-cli@3.3.12(webpack@4.47.0))
+      webpack: 4.47.0(webpack-cli@3.3.12)
     transitivePeerDependencies:
       - supports-color
 
@@ -16982,7 +16992,7 @@ snapshots:
     optionalDependencies:
       eslint: 8.55.0
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-webpack: 0.11.1(eslint-plugin-import@2.29.1)(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0)))
+      eslint-import-resolver-webpack: 0.11.1(eslint-plugin-import@2.29.1)(webpack@4.47.0(webpack-cli@3.3.12))
     transitivePeerDependencies:
       - supports-color
 
@@ -17652,18 +17662,11 @@ snapshots:
       schema-utils: 2.7.1
       webpack: 4.47.0(webpack-cli@3.3.12)
 
-  file-loader@6.2.0(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0))):
-    dependencies:
-      loader-utils: 2.0.4
-      schema-utils: 3.3.0
-      webpack: 4.47.0(webpack-cli@3.3.12(webpack@4.47.0))
-
   file-loader@6.2.0(webpack@4.47.0):
     dependencies:
       loader-utils: 2.0.4
       schema-utils: 3.3.0
       webpack: 4.47.0(webpack-cli@3.3.12)
-    optional: true
 
   file-type@11.1.0: {}
 
@@ -18471,7 +18474,7 @@ snapshots:
       util.promisify: 1.0.0
       webpack: 4.47.0(webpack-cli@3.3.12)
 
-  html-webpack-plugin@4.5.2(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0))):
+  html-webpack-plugin@4.5.2(webpack@4.47.0(webpack-cli@3.3.12)):
     dependencies:
       '@types/html-minifier-terser': 5.1.2
       '@types/tapable': 1.0.12
@@ -18482,7 +18485,7 @@ snapshots:
       pretty-error: 2.1.2
       tapable: 1.1.3
       util.promisify: 1.0.0
-      webpack: 4.47.0(webpack-cli@3.3.12(webpack@4.47.0))
+      webpack: 4.47.0(webpack-cli@3.3.12)
 
   htmlparser2@10.0.0:
     dependencies:
@@ -21103,7 +21106,7 @@ snapshots:
       cssnano: 5.1.15(postcss@8.5.6)
       last-call-webpack-plugin: 3.0.0
       postcss: 8.5.6
-      webpack: 4.47.0(webpack-cli@3.3.12(webpack@4.47.0))
+      webpack: 4.47.0(webpack-cli@3.3.12)
 
   optionator@0.8.3:
     dependencies:
@@ -21490,7 +21493,7 @@ snapshots:
       postcss-load-config: 2.1.2
       schema-utils: 1.0.0
 
-  postcss-loader@4.3.0(postcss@8.5.6)(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0))):
+  postcss-loader@4.3.0(postcss@8.5.6)(webpack@4.47.0(webpack-cli@3.3.12)):
     dependencies:
       cosmiconfig: 7.1.0
       klona: 2.0.6
@@ -21498,7 +21501,7 @@ snapshots:
       postcss: 8.5.6
       schema-utils: 3.3.0
       semver: 7.7.3
-      webpack: 4.47.0(webpack-cli@3.3.12(webpack@4.47.0))
+      webpack: 4.47.0(webpack-cli@3.3.12)
 
   postcss-merge-longhand@5.1.7(postcss@8.5.6):
     dependencies:
@@ -22536,6 +22539,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  scratch-blocks@1.1.225:
+    dependencies:
+      exports-loader: 0.7.0
+      google-closure-library: 20190301.0.0
+      imports-loader: 0.8.0
+      scratch-l10n: 3.18.357
+
   scratch-l10n@3.15.20230527032201:
     dependencies:
       '@babel/cli': 7.28.3(@babel/core@7.28.4)
@@ -22569,6 +22579,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  scratch-l10n@3.18.357:
+    dependencies:
+      '@transifex/api': 4.3.0
+      download: 8.0.0
+      transifex: 1.6.6
+
   scratch-parser@https://codeload.github.com/TurboWarp/scratch-parser/tar.gz/326b4bc5e8177073d57732b8b841bcd36c87f658:
     dependencies:
       '@turbowarp/json': 0.1.2
@@ -22596,7 +22612,7 @@ snapshots:
     transitivePeerDependencies:
       - webpack
 
-  scratch-render@https://codeload.github.com/TurboWarp/scratch-render/tar.gz/dd5d399eace4b5bae11906e2237fe67ee6b79d84(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0))):
+  scratch-render@https://codeload.github.com/TurboWarp/scratch-render/tar.gz/dd5d399eace4b5bae11906e2237fe67ee6b79d84(webpack@4.47.0(webpack-cli@3.3.12)):
     dependencies:
       '@turbowarp/ancient-hull.js': 0.2.13
       '@turbowarp/nanolog': 0.2.0
@@ -22605,7 +22621,7 @@ snapshots:
       ify-loader: 1.0.4
       linebreak: 0.3.0
       raw-loader: 0.5.1
-      scratch-storage: 1.3.6(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0)))
+      scratch-storage: 1.3.6(webpack@4.47.0(webpack-cli@3.3.12))
       twgl.js: 4.4.0
     transitivePeerDependencies:
       - scratch-render-fonts
@@ -22617,14 +22633,14 @@ snapshots:
       minilog: 3.1.0
       text-encoding: 0.7.0
 
-  scratch-storage@1.3.6(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0))):
+  scratch-storage@1.3.6(webpack@4.47.0(webpack-cli@3.3.12)):
     dependencies:
       arraybuffer-loader: 1.0.8
       base64-js: 1.3.0
       fastestsmallesttextencoderdecoder: 1.0.22
       js-md5: 0.7.3
       minilog: 3.1.0
-      worker-loader: 2.0.0(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0)))
+      worker-loader: 2.0.0(webpack@4.47.0(webpack-cli@3.3.12))
     transitivePeerDependencies:
       - webpack
 
@@ -23649,19 +23665,6 @@ snapshots:
       ansi-escapes: 4.3.2
       supports-hyperlinks: 2.3.0
 
-  terser-webpack-plugin@1.4.6(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0))):
-    dependencies:
-      cacache: 12.0.4
-      find-cache-dir: 2.1.0
-      is-wsl: 1.1.0
-      schema-utils: 1.0.0
-      serialize-javascript: 4.0.0
-      source-map: 0.6.1
-      terser: 4.8.1
-      webpack: 4.47.0(webpack-cli@3.3.12(webpack@4.47.0))
-      webpack-sources: 1.4.3
-      worker-farm: 1.7.0
-
   terser-webpack-plugin@1.4.6(webpack@4.47.0):
     dependencies:
       cacache: 12.0.4
@@ -23685,7 +23688,7 @@ snapshots:
       serialize-javascript: 5.0.1
       source-map: 0.6.1
       terser: 5.44.0
-      webpack: 4.47.0(webpack-cli@3.3.12(webpack@4.47.0))
+      webpack: 4.47.0(webpack-cli@3.3.12)
       webpack-sources: 1.4.3
     transitivePeerDependencies:
       - bluebird
@@ -23982,7 +23985,7 @@ snapshots:
       webpack-sources: 1.4.3
       worker-farm: 1.7.0
 
-  uglifyjs-webpack-plugin@1.3.0(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0))):
+  uglifyjs-webpack-plugin@1.3.0(webpack@4.47.0(webpack-cli@3.3.12)):
     dependencies:
       cacache: 10.0.4
       find-cache-dir: 1.0.0
@@ -23990,7 +23993,7 @@ snapshots:
       serialize-javascript: 1.9.1
       source-map: 0.6.1
       uglify-es: 3.3.9
-      webpack: 4.47.0(webpack-cli@3.3.12(webpack@4.47.0))
+      webpack: 4.47.0(webpack-cli@3.3.12)
       webpack-sources: 1.4.3
       worker-farm: 1.7.0
 
@@ -24119,14 +24122,14 @@ snapshots:
     optionalDependencies:
       file-loader: 6.2.0(webpack@4.47.0)
 
-  url-loader@4.1.1(file-loader@6.2.0(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0))))(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0))):
+  url-loader@4.1.1(file-loader@6.2.0(webpack@4.47.0(webpack-cli@3.3.12)))(webpack@4.47.0(webpack-cli@3.3.12)):
     dependencies:
       loader-utils: 2.0.4
       mime-types: 2.1.35
       schema-utils: 3.3.0
-      webpack: 4.47.0(webpack-cli@3.3.12(webpack@4.47.0))
+      webpack: 4.47.0(webpack-cli@3.3.12)
     optionalDependencies:
-      file-loader: 6.2.0(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0)))
+      file-loader: 6.2.0(webpack@4.47.0)
 
   url-parse-lax@3.0.0:
     dependencies:
@@ -24412,7 +24415,7 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  webpack-dev-server@3.11.3(webpack-cli@3.3.12(webpack@4.47.0))(webpack@4.47.0):
+  webpack-dev-server@3.11.3(webpack-cli@3.3.12)(webpack@4.47.0):
     dependencies:
       ansi-html-community: 0.0.8
       bonjour: 3.5.0
@@ -24443,7 +24446,7 @@ snapshots:
       strip-ansi: 3.0.1
       supports-color: 6.1.0
       url: 0.11.4
-      webpack: 4.47.0(webpack-cli@3.3.12(webpack@4.47.0))
+      webpack: 4.47.0(webpack-cli@3.3.12)
       webpack-dev-middleware: 3.7.3(webpack@4.47.0)
       webpack-log: 2.0.0
       ws: 6.2.3
@@ -24491,36 +24494,6 @@ snapshots:
       webpack-sources: 1.4.3
     optionalDependencies:
       webpack-cli: 3.1.0(webpack@4.47.0)
-    transitivePeerDependencies:
-      - supports-color
-
-  webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0)):
-    dependencies:
-      '@webassemblyjs/ast': 1.9.0
-      '@webassemblyjs/helper-module-context': 1.9.0
-      '@webassemblyjs/wasm-edit': 1.9.0
-      '@webassemblyjs/wasm-parser': 1.9.0
-      acorn: 6.4.2
-      ajv: 6.12.6
-      ajv-keywords: 3.5.2(ajv@6.12.6)
-      chrome-trace-event: 1.0.4
-      enhanced-resolve: 4.5.0
-      eslint-scope: 4.0.3
-      json-parse-better-errors: 1.0.2
-      loader-runner: 2.4.0
-      loader-utils: 1.4.2
-      memory-fs: 0.4.1
-      micromatch: 3.1.10(supports-color@6.1.0)
-      mkdirp: 0.5.6
-      neo-async: 2.6.2
-      node-libs-browser: 2.2.1
-      schema-utils: 1.0.0
-      tapable: 1.1.3
-      terser-webpack-plugin: 1.4.6(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0)))
-      watchpack: 1.7.5
-      webpack-sources: 1.4.3
-    optionalDependencies:
-      webpack-cli: 3.3.12(webpack@4.47.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -24666,11 +24639,11 @@ snapshots:
       schema-utils: 0.4.7
       webpack: 4.47.0(webpack-cli@3.1.0)
 
-  worker-loader@2.0.0(webpack@4.47.0(webpack-cli@3.3.12(webpack@4.47.0))):
+  worker-loader@2.0.0(webpack@4.47.0(webpack-cli@3.3.12)):
     dependencies:
       loader-utils: 1.4.2
       schema-utils: 0.4.7
-      webpack: 4.47.0(webpack-cli@3.3.12(webpack@4.47.0))
+      webpack: 4.47.0(webpack-cli@3.3.12)
 
   worker-loader@2.0.0(webpack@4.47.0):
     dependencies:

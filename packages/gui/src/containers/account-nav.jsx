@@ -15,8 +15,7 @@ const AccountNav = function (props) {
     const { ...componentProps } = props;
     return <AccountNavComponent {...componentProps} />;
 };
-const res = fetch('https://ampmod.vercel.app/internalapi/session');
-const json = await res.json();
+
 AccountNav.propTypes = {
     classroomId: PropTypes.string,
     isEducator: PropTypes.bool,
@@ -49,7 +48,9 @@ const mapStateToProps = state => ({
             ? state.session.session.user.thumbnailUrl
             : null,
     username:
-        json.username, 
+        state.session && state.session.session && state.session.session.user
+            ? state.session.session.user.username
+            : "",
 });
 
 const mapDispatchToProps = () => ({});

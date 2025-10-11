@@ -193,7 +193,7 @@ const alerts = [
             "saving",
         ],
         showDownload: true,
-        showSaveNow: true,
+        // showSaveNow: true,
         closeButton: true,
         content: (
             <FormattedMessage
