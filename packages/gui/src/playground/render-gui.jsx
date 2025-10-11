@@ -12,13 +12,12 @@ const RenderGUI = props => {
         <GUI
             cloudHost={cloudHost}
             canUseCloud
-            canCreateNew={creatingNewProject}
             canShare={false} // Just Share From The Project Page
             hasCloudPermission
             canSave={true}
             basePath={process.env.ROOT}
             canEditTitle
-            enableCommunity={!window.isPwa}
+            enableCommunity={true}
             {...props}
         />
     );
