@@ -50,7 +50,7 @@ const AuthorInfo = ({ projectId, ...props }) =>
     projectId ? (
         <a
             className={styles.link}
-            href={`https://scratch.mit.edu/projects/${projectId}`}
+            href={`https://ampmod.vercel.app/projects/${projectId}`}
             target="_blank"
             rel="noreferrer"
         >
