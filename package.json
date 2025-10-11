@@ -27,6 +27,7 @@
     },
     "dependencies": {
         "@ampmod/branding": "workspace:*",
-        "@fontsource-variable/inter": "^5.2.7"
+        "@fontsource-variable/inter": "^5.2.7",
+        "scratch-blocks": "^1.1.225"
     }
 }

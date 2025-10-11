@@ -199,7 +199,7 @@ const GUIComponent = props => {
     const isAuthor = Boolean(
         getSession().username === authorUsername ? true : false
     );
-    const isLoggedIn = Boolean(getSession()?.username);
+    const isLoggedIn = Boolean(getSession()?.username ? true : false);
     const unconstrainedWidth =
         UNCONSTRAINED_NON_STAGE_WIDTH +
         FIXED_WIDTH +
