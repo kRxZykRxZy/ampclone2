@@ -7,8 +7,8 @@
     "scripts": {
         "test": "pnpm --recursive run test",
         "prepare": "husky && pnpm --recursive run prepare",
-        "build": "cd packages/aw3 && pnpm install && cd ../.. && pnpm --filter ./packages/aw3 run build && pnpm --filter ./packages/gui run ci-build",
-        "ci-build": "cd packages/aw3 && pnpm install && cd ../.. && pnpm --filter ./packages/aw3 run build && pnpm --filter ./packages/gui run ci-build ",
+        "build": "pnpm --filter ./packages/gui run ci-build",
+        "ci-build":"pnpm --filter ./packages/gui run ci-build ",
         "start": "pnpm --filter ./packages/gui run start",
         "test-cbp": "pnpm --filter ./packages/gui run test-cbp"
     },
