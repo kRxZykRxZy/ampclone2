@@ -42,7 +42,6 @@ import TWRestorePointManager from "../../containers/tw-restore-point-manager.jsx
 import TWFontsModal from "../../containers/tw-fonts-modal.jsx";
 import TWUnknownPlatformModal from "../../containers/tw-unknown-platform-modal.jsx";
 import TWInvalidProjectModal from "../../containers/tw-invalid-project-modal.jsx";
-import { getSession, getProjectMeta } from "../../lib/aw3-functions.js";
 
 import {
     STAGE_SIZE_MODES,
@@ -62,7 +61,6 @@ import addExtensionIcon from "./icon--extensions.svg";
 import codeIcon from "!../../lib/tw-recolor/build!./icon--code.svg";
 import costumesIcon from "!../../lib/tw-recolor/build!./icon--costumes.svg";
 import soundsIcon from "!../../lib/tw-recolor/build!./icon--sounds.svg";
-import { get } from "../../../../svg-renderer/src/svg-element.js";
 
 const messages = defineMessages({
     addExtension: {
@@ -196,10 +194,6 @@ const GUIComponent = props => {
         ),
     };
 
-    const isAuthor = Boolean(
-        getSession().username === authorUsername ? true : false
-    );
-    const isLoggedIn = Boolean(getSession()?.username ? true : false);
     const unconstrainedWidth =
         UNCONSTRAINED_NON_STAGE_WIDTH +
         FIXED_WIDTH +
@@ -347,22 +341,14 @@ const GUIComponent = props => {
                                     canChangeLanguage={canChangeLanguage}
                                     canChangeTheme={canChangeTheme}
                                     canCreateCopy={canCreateCopy}
-                                    canCreateNew={
-                                        new URLSearchParams(
-                                            window.location.search
-                                        ).get("new_project") == 1
-                                            ? true
-                                            : false
-                                    }
-                                    canEditTitle={isAuthor ? true : false}
+                                    canCreateNew={canCreateNew}
+                                    canEditTitle={canEditTitle}
                                     canManageFiles={canManageFiles}
-                                    canRemix={
-                                        isLoggedIn && !isAuthor ? true : false
-                                    }
-                                    canSave={isAuthor ? true : false}
-                                    canShare={false}
+                                    canRemix={canRemix}
+                                    canSave={canSave}
+                                    canShare={canShare}
                                     className={styles.menuBarPosition}
-                                    enableCommunity={true}
+                                    enableCommunity={enableCommunity}
                                     isShared={isShared}
                                     isTotallyNormal={isTotallyNormal}
                                     logo={logo}

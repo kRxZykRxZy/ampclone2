@@ -7,8 +7,8 @@
     "scripts": {
         "test": "pnpm --recursive run test",
         "prepare": "husky && pnpm --recursive run prepare",
-        "build": "pnpm --filter ./packages/gui run ci-build",
-        "ci-build":"pnpm --filter ./packages/gui run ci-build ",
+        "build": "pnpm --filter ./packages/gui run build",
+        "ci-build": "pnpm --filter ./packages/gui run ci-build",
         "start": "pnpm --filter ./packages/gui run start",
         "test-cbp": "pnpm --filter ./packages/gui run test-cbp"
     },
@@ -17,7 +17,7 @@
     "devDependencies": {
         "esbuild-loader": "^4.4.0",
         "husky": "^9.1.7",
-        "lint-staged": "^16.1.6",
+        "lint-staged": "^16.2.4",
         "optimize-css-assets-webpack-plugin": "^6.0.1",
         "prettier": "^3.6.2",
         "terser-webpack-plugin": "^4.2.3",
@@ -27,7 +27,6 @@
     },
     "dependencies": {
         "@ampmod/branding": "workspace:*",
-        "@fontsource-variable/inter": "^5.2.7",
-        "scratch-blocks": "^1.1.225"
+        "@fontsource-variable/inter": "^5.2.8"
     }
 }
