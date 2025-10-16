@@ -1,24 +1,76 @@
 import { connect } from "react-redux";
 import { FormattedMessage } from "react-intl";
 import PropTypes from "prop-types";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import InlineMessages from "../../containers/inline-messages.jsx";
 import SB3Downloader from "../../containers/sb3-downloader.jsx";
 import { filterInlineAlerts } from "../../reducers/alerts";
 import classNames from "classnames";
 
+import VM from "scratch-vm"; // import VM directly
 import styles from "./menu-bar.css";
+
+// Import saveProject and getSession
+import { saveProject, getSession, getProjectMeta } from "../../lib/aw3-functions.js";
 
 const TWSaveStatus = ({
     alertsList,
     fileHandle,
     projectChanged,
     showSaveFilePicker,
-}) =>
-    filterInlineAlerts(alertsList).length > 0 ? (
-        <InlineMessages />
-    ) : (
-        projectChanged && (
+    projectTitle, // from Redux
+}) => {
+    const [isAuthor, setIsAuthor] = useState(false);
+    const [statusMessage, setStatusMessage] = useState("");
+    const [authorUsername, setAuthorUsername] = useState(null);
+
+    const projectId = window.location.hash.substring(1); // use URL hash as project ID
+
+    // Fetch project author
+    useEffect(() => {
+        const fetchAuthor = async () => {
+            try {
+                const username = await getProjectMeta(projectId);
+                setAuthorUsername(username);
+            } catch (err) {
+                console.error("Failed to fetch project author:", err);
+            }
+        };
+        fetchAuthor();
+    }, [projectId]);
+
+    useEffect(() => {
+        const checkAuthor = async () => {
+            if (!authorUsername) return;
+            const session = await getSession();
+            setIsAuthor(Boolean(session?.username === authorUsername));
+        };
+        checkAuthor();
+    }, [authorUsername]);
+
+    const handleAW3Save = async () => {
+        try {
+            await saveProject(VM, projectId, projectTitle); // use projectTitle from Redux
+            setStatusMessage("Saved!");
+        } catch (err) {
+            console.error(err);
+            setStatusMessage("Failed To Save!");
+        } finally {
+            setTimeout(() => setStatusMessage(""), 2500);
+        }
+    };
+
+    const inlineAlerts = filterInlineAlerts(alertsList);
+
+    if (inlineAlerts.length > 0) {
+        return <InlineMessages />;
+    }
+
+    if (!projectChanged) return null;
+
+    return (
+        <div className={styles.menuBarItemGroup}>
+            {/* download project to your device */}
             <SB3Downloader showSaveFilePicker={showSaveFilePicker}>
                 {(_className, _downloadProjectCallback, { smartSave }) => (
                     <div
@@ -33,9 +85,7 @@ const TWSaveStatus = ({
                                 defaultMessage="Save as {file}"
                                 description="Menu bar item to save project to an existing file on the user's computer"
                                 id="tw.menuBar.saveAs"
-                                values={{
-                                    file: fileHandle.name,
-                                }}
+                                values={{ file: fileHandle.name }}
                             />
                         ) : (
                             <FormattedMessage
@@ -47,8 +97,25 @@ const TWSaveStatus = ({
                     </div>
                 )}
             </SB3Downloader>
-        )
+
+            {/* allow project saving */}
+            {isAuthor && (
+                <div
+                    onClick={handleAW3Save}
+                    className={classNames([styles.menuBarItem, styles.hoverable])}
+                >
+                    {statusMessage ? statusMessage : (
+                        <FormattedMessage
+                            defaultMessage="Save Now..."
+                            description="Menu bar item for saving project to online server"
+                            id="tw.menuBar.saveOnline"
+                        />
+                    )}
+                </div>
+            )}
+        </div>
     );
+};
 
 TWSaveStatus.propTypes = {
     alertsList: PropTypes.arrayOf(PropTypes.object),
@@ -57,12 +124,14 @@ TWSaveStatus.propTypes = {
     }),
     projectChanged: PropTypes.bool,
     showSaveFilePicker: PropTypes.func,
+    projectTitle: PropTypes.string, // from Redux
 };
 
 const mapStateToProps = state => ({
     alertsList: state.scratchGui.alerts.alertsList,
     fileHandle: state.scratchGui.tw.fileHandle,
     projectChanged: state.scratchGui.projectChanged,
+    projectTitle: state.scratchGui.projectTitle, // added
 });
 
 export default connect(mapStateToProps, () => ({}))(TWSaveStatus);
