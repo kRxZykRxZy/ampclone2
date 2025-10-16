@@ -17,7 +17,8 @@ const RenderGUI = props => {
                 stopLiveCollab = initLiveCollab({
                     workspace: workspace,
                     vm: window.vm,
-                    socketUrl: "http://localhost:3000" // replace with your server
+                    projectId: props?.projectId,
+                    socketUrl: "https://ampmod-collab.onrender.com"
                 });
                 console.log("[liveCollab] started and running forever");
                 // do not clear interval; keep checking in case workspace is recreated
