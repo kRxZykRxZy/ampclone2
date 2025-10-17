@@ -119,11 +119,12 @@ const base = {
     module: {
         rules: [
             {
-                test: /\.jsx?$/,
+                test: /\.m?jsx?$/ ,
                 loader: "esbuild-loader",
                 include: [
                     path.resolve(__dirname, "src"),
                     /node_modules[\\/]scratch-[^\\/]+[\\/]src/,
+                    /node_modules[\\/]yjs[\\/]/,
                 ],
                 options: {
                     target: "es2019",
