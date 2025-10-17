@@ -125,6 +125,7 @@ const base = {
                     path.resolve(__dirname, "src"),
                     /node_modules[\\/]scratch-[^\\/]+[\\/]src/,
                     /node_modules[\\/]yjs[\\/]/,
+                    /node_modules[\\/]lib0[\\/]/,
                 ],
                 options: {
                     target: "es2019",
