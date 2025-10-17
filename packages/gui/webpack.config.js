@@ -105,7 +105,6 @@ const base = {
     resolve: {
         symlinks: false,
         extensions: [".js", ".jsx", ".mjs", ".json"],
-        fullySpecified: false, 
         alias: {
             "text-encoding$": path.resolve(
                 __dirname,
