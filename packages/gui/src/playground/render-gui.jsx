@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import GUI from "../containers/gui.jsx";
-import initLiveCollab from "../lib/collaboration/liveCollab";
+import initLiveCollab from "../lib/collaboration/sync-blocks";
 
 const searchParams = new URLSearchParams(location.search);
 const cloudHost = searchParams.get("cloud_host") || "wss://clouddata.turbowarp.org";
