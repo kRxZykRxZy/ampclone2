@@ -104,6 +104,8 @@ const base = {
     },
     resolve: {
         symlinks: false,
+        extensions: [".js", ".jsx", ".mjs", ".json"],
+        fullySpecified: false, 
         alias: {
             "text-encoding$": path.resolve(
                 __dirname,
@@ -128,6 +130,12 @@ const base = {
                     target: "es2019",
                 },
             },
+            {
+                test: /\.mjs$/,
+                include: /node_modules/,
+                type: "javascript/auto",
+            },
+                    
             {
                 test: /\.css$/,
                 use: [
