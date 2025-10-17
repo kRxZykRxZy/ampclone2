@@ -1,35 +1,45 @@
-name: Sync from Codeberg
+name: Sync, Build, and Deploy to GitHub Pages
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 */10 * * *" # runs every 10 hours
+    - cron: "*/15 * * * *" # every 15 minutes
 
 permissions:
-  contents: write  # allow pushing
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
-  sync:
+  sync-and-build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout current repo
+      # Step 1: Checkout current repo
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Remove everything except .git and .github
+      # Step 2: Remove everything except .git and .github
+      - name: Clean repository
         run: |
           shopt -s extglob dotglob
           rm -rf !(.git|.github)
 
+      # Step 3: Clone Codeberg repo
       - name: Clone Codeberg repo
         run: |
           git clone --depth=1 https://codeberg.org/kRxZy_kRxZy/ampmod temp-src
           cp -r temp-src/* .
           rm -rf temp-src
 
+      # Step 4: Commit changes
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
@@ -37,8 +47,40 @@ jobs:
           git add -A
           git commit -m "Sync from Codeberg repo" || echo "No changes to commit"
 
+      # Step 5: Push changes to GitHub main branch
       - name: Push changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git push origin HEAD:main
+
+      # Step 6: Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Step 7: Setup pnpm
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 10.18.1
+
+      # Step 8: Install dependencies
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
+
+      # Step 9: Build production
+      - name: Build production
+        run: pnpm run build
+
+      # Step 10: Upload build output
+      - name: Upload build artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: packages/gui/build
+
+      # Step 11: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
