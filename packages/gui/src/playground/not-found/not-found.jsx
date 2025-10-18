@@ -13,6 +13,28 @@ import { detectTheme } from "../../lib/themes/themePersistance";
 applyGuiColors(detectTheme());
 document.documentElement.lang = "en";
 
+const Project = ({ id }) => (
+        <div style={{ width: "100%", height: "100vh", margin: 0, padding: 0 }}>
+            <iframe
+                src={`https://ampmod.codeberg.page/editor#${id}`}
+                style={{
+                    width: "100%",
+                    height: "100%",
+                    border: "none",
+                    margin: 0,
+                    padding: 0,
+                }}
+                title={`Project Editor ${id}`}
+            />
+        </div>
+);
+
+let projectId = null;
+if(window.location.path.includes('projects')) {
+  const match = window.location.pathname.match(/^\/projects\/(\d+)$/);
+  const projectId = match ? match[1] : null;
+}
+
 const Home = () => (
     <>
         <header
@@ -39,4 +61,4 @@ const Home = () => (
     </>
 );
 
-render(<Home />);
+render(projectId ? <Project id={projectId} /> : <Home />);
